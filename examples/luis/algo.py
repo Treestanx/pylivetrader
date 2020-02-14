@@ -10,7 +10,7 @@ def initialize(context):
     # share between methods.
 
     # This is the asset that we'll be trading.
-    context.asset = symbol('INO')
+    context.asset = symbol('TSLA')
 
 
 def handle_data(context, data):
@@ -47,6 +47,6 @@ def handle_data(context, data):
         order_target_percent(context.asset, -1)
 
     # Save values for later inspection
-    record(INO=data.current(context.asset, 'price'),
+    record(TSLA=data.current(context.asset, 'price'),
            short_mavg=short_ema,
            long_mavg=long_ema)
